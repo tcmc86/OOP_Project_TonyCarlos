@@ -25,9 +25,22 @@ public class Deck {
             System.out.println(card);
     }
 
+    public void shuffleDeck() {
+
+        for(int i = 0; i < deck.length; i++) {
+            int j = (int)(Math.random() * deck.length);
+            Card temp = deck[i];
+            deck[i] = deck[j];
+            deck[j] = temp;
+        }
+
+
+
+    }}
 
 
 
 
-}
+
+
 
