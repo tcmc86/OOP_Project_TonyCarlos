@@ -5,7 +5,7 @@ public class Poker {
         Deck deck = new Deck();
 
 
-        deck.displayDeck();
+
         deck.shuffleDeck();
         deck.displayDeck();
 
