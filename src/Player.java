@@ -1,6 +1,12 @@
 public class Player {
 
      private String name;
+     private Card[] cards;
+
+     public Player(){
+
+         this("Unknown");
+     }
 
 
      public Player(String name){
@@ -23,6 +29,9 @@ public class Player {
     @Override
     public String toString() {
 
-         return "Player 1: " + getName();
+         return  "Player name: " + getName();
     }
+
+
+
 }

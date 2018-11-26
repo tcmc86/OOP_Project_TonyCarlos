@@ -1,58 +1,62 @@
-public class Deck {
+public class Deck extends Card {
 
-    //The deck is an array of cards
+
+
     private Card[] deck;
+    private int currentCard;
+    private final int CARDS = 52;
 
     // Deck is an array of rank as string and suit as string.
     public Deck() {
 
-        String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7",
-                "8", "9", "10", "Jack", "Queen", "King"};
+
+
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
 
         deck = new Card[52];
 
-        for (int i = 0; i < 13; i++) {      // i = cardRank
+        for (int i = 0; i < 13; i++) { // i = cardRank
 
-            for (int j = 0; j < 4; j++) {   // j = cardSuit
+            for (int j = 0; j < 4; j++) { // j = cardSuit
 
                 deck[(i + (j * 13))] = new Card(ranks[i], suits[j]);
             }
         }
     }
 
-    // Display the deck of cards in order
-    public void displayDeck() {
+    // Display the deck of card in order of lowest to highest rank and suit.
+    public void displayDeck(){
 
-        for (Card card : deck)
+        for(Card card : deck)
             System.out.println(card);
     }
 
-    // Display the deck in random order.
+    //
     public void shuffleDeck() {
 
-        Card temp;
-        for (int i = 0; i < deck.length; i++) {
-            int j = (int) (Math.random() * deck.length);
-            temp = deck[i];
+        for(int i = 0; i < deck.length; i++) {
+            int j = (int)(Math.random() * deck.length);
+            Card temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
         }
 
     }
 
-    public void dealPlayer() {
-
-        //The amount of players to be dealt
-        for (int i = 0; i < 4; i++) {
-            System.out.println("\nPlayer " + (i + 1) + ":");
-            //The amount of cards to be dealt to each player
-            for (int j = 0; j < 5; j++) {
-                System.out.println(deck[i + (j * 4)]);
-            }
-        }
+    public Card dealACard()
+    {
+        if (currentCard >= CARDS)
+            shuffleDeck();
+        return deck[currentCard++];
     }
+
 }
+
+
+
+
+
 
 
 

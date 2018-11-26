@@ -1,54 +1,41 @@
 public class Card {
 
-    //Store deck in arrays of rank and suit
     private String rank;
     private String suit;
 
-
-
-
-
-    //Constructor method
     public Card(String rank, String suit) {
 
         this.rank = rank;
-        this.rank = suit;
+        this.suit = suit;
+    }
 
+    public Card(String rank, String suit, int i) {
 
     }
 
+    public Card() {
 
+    }
 
-
-    public String getCardRank()
-    {
+    public String getRank() {
         return rank;
     }
 
-    public String getCardSuit()
-    {
+    public String getSuit() {
         return suit;
     }
 
-
-
-    public void setCardRank(String cardRank) {
-
-        this.rank = cardRank;
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
-    public void setCardSuit(String cardSuit) {
-
-        this.suit = cardSuit;
+    public void setSuit(String suit) {
+        this.suit = suit;
     }
-
 
     @Override
-
     public String toString() {
-
-        return getCardRank() + " of " + getCardSuit();
+        return getRank() + " of " + getSuit();
     }
 }
-
 
