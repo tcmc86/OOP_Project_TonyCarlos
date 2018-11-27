@@ -1,11 +1,11 @@
 public class Player {
 
      private String name;
-     private Card[] cards;
+
 
      public Player(){
 
-         this("Unknown");
+         this("");
      }
 
 
@@ -15,8 +15,7 @@ public class Player {
      }
 
 
-
-    public String getName() {
+     public String getName() {
 
          return name;
     }
@@ -31,6 +30,7 @@ public class Player {
 
          return  "Player name: " + getName();
     }
+
 
 
 

@@ -1,14 +1,12 @@
 public class Deck extends Card {
 
 
-
     private Card[] deck;
-    private int currentCard;
-    private final int CARDS = 52;
+    Hands[] hand = new Hands[5];
+
 
     // Deck is an array of rank as string and suit as string.
     public Deck() {
-
 
 
         String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
@@ -26,17 +24,17 @@ public class Deck extends Card {
     }
 
     // Display the deck of card in order of lowest to highest rank and suit.
-    public void displayDeck(){
+    public void displayDeck() {
 
-        for(Card card : deck)
+        for (Card card : deck)
             System.out.println(card);
     }
 
     //
     public void shuffleDeck() {
 
-        for(int i = 0; i < deck.length; i++) {
-            int j = (int)(Math.random() * deck.length);
+        for (int i = 0; i < deck.length; i++) {
+            int j = (int) (Math.random() * deck.length);
             Card temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
@@ -44,13 +42,14 @@ public class Deck extends Card {
 
     }
 
-    public Card dealACard()
-    {
-        if (currentCard >= CARDS)
-            shuffleDeck();
-        return deck[currentCard++];
-    }
+    public void showHand() {
 
+        int i;
+        for (i = 0; i < 5; i++) {
+            System.out.println(hand[i]);
+        }
+
+    }
 }
 
 
