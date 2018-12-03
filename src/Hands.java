@@ -8,6 +8,7 @@ public class Hands extends Card{
 
 
     //http://cobweb.cs.uga.edu/~gtb/1302/Project1/PokerHand.java
+    // Creating a hand of 5 cards
     public Hands(Card card1,Card card2, Card card3, Card card4, Card card5){
 
         hand = new Card[5];
@@ -27,20 +28,30 @@ public class Hands extends Card{
 
     }
 
-   public Card[] getHand() {
+   public Card[] getHand()
+   {
         return hand;
     }
 
     public void setHand(Card[] hand) {
+
         this.hand = hand;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Hand is: \n" + getHand();
     }
 
-    public void dealHand(){
+
+    // method to show a five card hand
+    public void showHand() {
+
+        int i;
+        for (i = 0; i < 5; i++) {
+            System.out.println(hand[i]);
+        }
 
     }
 

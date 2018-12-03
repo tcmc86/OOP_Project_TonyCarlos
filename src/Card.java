@@ -3,6 +3,7 @@ public class Card {
     private String rank;
     private String suit;
 
+    //Contructor method for Card
     public Card(String rank, String suit) {
 
         this.rank = rank;
@@ -17,6 +18,7 @@ public class Card {
 
     }
 
+    // Accessor methods
     public String getRank() {
         return rank;
     }
@@ -25,6 +27,7 @@ public class Card {
         return suit;
     }
 
+    // Mutator methods
     public void setRank(String rank) {
         this.rank = rank;
     }
@@ -33,6 +36,7 @@ public class Card {
         this.suit = suit;
     }
 
+   // To String method
     @Override
     public String toString() {
         return getRank() + " of " + getSuit();

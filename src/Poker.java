@@ -7,13 +7,18 @@ public class Poker {
         String name = "";
         String numPlayersAsString;
 
+        Card card;
+
         //Create a new deck
         Deck deck = new Deck();
-        Card card = new Card();
+
+
 
 
         //Create set amount of players
         Player player = null;
+        Player player1 = new Player();
+
         Player[] players = new Player[4];
         players[0] = new Player();
         players[1] = new Player();
@@ -32,6 +37,7 @@ public class Poker {
         //Shuffle the deck of cards
         deck.shuffleDeck();
 
+        
         //Enter the number of players to play
         numPlayersAsString = JOptionPane.showInputDialog("Enter number of player (min 2, max 4 players): ");
         int numPlayers = Integer.parseInt(numPlayersAsString);
@@ -48,23 +54,13 @@ public class Poker {
             for(i = 0; i < numPlayers; i++){
                 name = JOptionPane.showInputDialog("Enter name player " + (i + 1) + ": ");
                 players[i] = new Player();
-
+                players[i] = null;
             }
-
-            for (int j = 0; j < numPlayers; j++) {
-                JOptionPane.showMessageDialog(null, players[0].toString());
-            }
-
-
-
-
-
-
-
 
 
         }
 
+        JOptionPane.showMessageDialog(null, player.dealPlayer());
 
 
 
@@ -73,17 +69,9 @@ public class Poker {
 
 
 
-
-
-
-
-
-
-
-
+        
 
     }
-
 
 
 }

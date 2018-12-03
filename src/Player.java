@@ -1,7 +1,13 @@
 public class Player {
 
      private String name;
+     private Card[] hand = new Card[5];
+     private int numCards;
+     private int numPlayers;
 
+
+
+     // Player constructor
 
      public Player(){
 
@@ -13,6 +19,7 @@ public class Player {
 
          this.name = name;
      }
+
 
 
      public String getName() {
@@ -30,6 +37,19 @@ public class Player {
 
          return  "Player name: " + getName();
     }
+
+
+    public Card[] dealPlayer(){
+
+         int i;
+         int j;
+         for(i = 0; i < numPlayers; i++){
+             for(j = 0; j < numCards; j++){
+                 System.out.println(hand[j]);
+             }
+         }
+    return hand;
+     }
 
 
 
